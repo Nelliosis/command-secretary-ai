@@ -1,0 +1,36 @@
+{
+  "name": "secretary-ai",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "mastra dev",
+    "build": "mastra build",
+    "start": "mastra start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "type": "module",
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "dependencies": {
+    "@ai-sdk/anthropic": "^2.0.9",
+    "@ai-sdk/groq": "^1.2.9",
+    "@mastra/core": "^0.15.2",
+    "@mastra/libsql": "^0.13.7",
+    "@mastra/loggers": "^0.10.9",
+    "@mastra/mcp": "^0.11.2",
+    "@mastra/memory": "^0.14.2",
+    "dotenv": "^17.2.1",
+    "ollama-ai-provider": "^1.2.0",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "mastra": "^0.11.2",
+    "typescript": "^5.9.2"
+  }
+}
