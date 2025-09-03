@@ -29,6 +29,10 @@ export const mcp = new MCPClient({
             env: {
                 "SUPABASE_ACCESS_TOKEN": process.env.SUPABASE_ACCESS_TOKEN || ""
             }
+        },
+        "asana": {
+            "command": "npx",
+            "args": ["mcp-remote", "https://mcp.asana.com/sse"]
         }
     }
 });
