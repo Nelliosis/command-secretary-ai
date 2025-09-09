@@ -33,6 +33,15 @@ export const mcp = new MCPClient({
         "asana": {
             "command": "npx",
             "args": ["mcp-remote", "https://mcp.asana.com/sse"]
+        },
+        "google_workspace": {
+            "command": "npx",
+            "args": ["mcp-remote", "http://localhost:8000/mcp"],
+            "env": {
+                "GOOGLE_OAUTH_CLIENT_ID": process.env.GOOGLE_OAUTH_CLIENT_ID || "",
+                "GOOGLE_OAUTH_CLIENT_SECRET": process.env.GOOGLE_OAUTH_CLIENT_SECRET || "",
+                "OAUTHLIB_INSECURE_TRANSPORT": "1"
+            }
         }
     }
 });
