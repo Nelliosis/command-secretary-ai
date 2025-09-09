@@ -80,7 +80,7 @@ export const secretaryAgent = new Agent({
 
             When users ask about repository status, commit history, Jira tickets, Asana tasks, database questions, or overall project progress, use the available GitHub, Atlassian, Asana, and Supabase tools to gather comprehensive information and provide detailed, professional reports.
 `,
-    model: anthropic('claude-sonnet-4-20250514'),
+    model: anthropic(`${process.env.ANTHROPIC_MODEL}`),
     tools: await mcp.getTools(),
     memory: new Memory({
         storage: new LibSQLStore({
