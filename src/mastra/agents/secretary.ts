@@ -1,9 +1,14 @@
 // import { groq } from '@ai-sdk/groq';
 import { anthropic } from '@ai-sdk/anthropic';
+// import { createGoogleGenerativeAI } from '@ai-sdk/google';
 import { Agent } from '@mastra/core/agent';
 import { Memory } from '@mastra/memory';
 import { LibSQLStore } from '@mastra/libsql';
 import { mcp } from '../mcp';
+
+// const google = createGoogleGenerativeAI({
+//     apiKey: process.env.GOOGLE_GENERATIVE_AI_API_KEY
+// })
 
 export const secretaryAgent = new Agent({
     name: 'Secretary Agent',
@@ -75,7 +80,7 @@ export const secretaryAgent = new Agent({
 
             When users ask about repository status, commit history, Jira tickets, Asana tasks, database questions, or overall project progress, use the available GitHub, Atlassian, Asana, and Supabase tools to gather comprehensive information and provide detailed, professional reports.
 `,
-    model: anthropic(`${process.env.ANTHROPIC_MODEL}`),
+    model: anthropic('claude-sonnet-4-20250514'),
     tools: await mcp.getTools(),
     memory: new Memory({
         storage: new LibSQLStore({
